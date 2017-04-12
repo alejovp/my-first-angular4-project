@@ -1,0 +1,15 @@
+<app-header
+  (navOptionSelected)="showSection($event)"
+></app-header>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <app-recipes 
+        *ngIf="navOption === 'showRecipesSection'">
+      </app-recipes>
+      <app-shopping-list
+        *ngIf="navOption !== 'showRecipesSection'">>
+      </app-shopping-list>
+    </div>
+  </div>
+</div>
