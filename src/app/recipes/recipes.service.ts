@@ -1,7 +1,10 @@
-import { EventEmitter } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 import { Recipe } from './recipe.model';
 import { Ingredient } from '../shared/ingredient.model';
+import { ShoppingListService } from '../shopping-list/shopping-list.service';
 
+
+@Injectable()
 export class RecipesService {
   
   recipeSelected = new EventEmitter<Recipe>();
@@ -25,9 +28,15 @@ export class RecipesService {
       ])
   ];
 
+  constructor(private slService: ShoppingListService){}
+
   getRecipes() {
     // We want to return the array but not the reference, just a copy
     // for this reason we use .slice() on recipes, to return just a copy.
     return this.recipes.slice();
+  }
+
+  ingsToShopping(ingredients: Ingredient[]) {
+    this.slService.addRecipeIngredients(ingredients);
   }
 }

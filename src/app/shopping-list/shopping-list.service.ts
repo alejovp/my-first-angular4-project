@@ -26,7 +26,7 @@ export class ShoppingListService {
     this.onIngredientsChange.emit(this.ingredients.slice());
   }
 
-  onIngsToShopping(ingredients: Ingredient[]) {
+  addRecipeIngredients(ingredients: Ingredient[]) {
     this.ingredients = this.ingredients.concat(ingredients);
     this.onIngredientsChange.emit(this.ingredients.slice());
   }
