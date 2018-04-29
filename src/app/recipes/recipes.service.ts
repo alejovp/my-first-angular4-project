@@ -39,4 +39,8 @@ export class RecipesService {
   ingsToShopping(ingredients: Ingredient[]) {
     this.slService.addRecipeIngredients(ingredients);
   }
+
+  getRecipe(index: number) {
+    return this.recipes[index];
+  }
 }
