@@ -17,8 +17,7 @@
     <app-recipe-item 
       *ngFor="let recipeElem of recipes; let i = index"
       [recipe]="recipeElem"
-      [index]="i"
-      (click)="showDetail(recipeElem)">     
+      [index]="i">     
     </app-recipe-item>
   </div>
 </div>
