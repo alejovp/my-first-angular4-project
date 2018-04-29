@@ -9,12 +9,4 @@ export class AppComponent {
   
   navOption: string;
 
-  showSection(eventHeader: {showRecipes: Boolean, showShoppingList: Boolean}) {
-    if (eventHeader.showRecipes) {
-      this.navOption = 'showRecipesSection';
-    } else {
-      this.navOption = 'showShopListSection';
-    }
-  }
-
 }

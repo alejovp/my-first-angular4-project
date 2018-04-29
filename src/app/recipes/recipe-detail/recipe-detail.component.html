@@ -1,6 +1,8 @@
 <div class="row">
   <div class="col-xs-12">
-    <img [src]="recipe.imagePath" alt="" class="img-responsive">
+    <img [src]="recipe.imagePath" 
+         alt="" 
+         class="img-responsive">
   </div>
 </div>
 <div class="row">
@@ -18,10 +20,14 @@
       </button>
       <ul class="dropdown-menu">
         <li (click)="ingsToShopping(recipe.ingredients)">
-          <a style="cursor: pointer">To Shopping List</a>
+          <a style="cursor: pointer;">To Shopping List</a>
         </li>
-        <li><a href="#">Edit Recipe</a></li>
-        <li><a href="#">Delete Recipe</a></li>
+        <li>
+          <a style="cursor: pointer;">Edit Recipe</a>
+        </li>
+        <li>
+          <a style="cursor: pointer;">Delete Recipe</a>
+        </li>
       </ul>
     </div>
   </div>
