@@ -37,6 +37,11 @@ export class RecipesService {
     return this.recipes.slice();
   }
 
+  setRecipes(recipes: Recipe[]) {
+    this.recipes = recipes;
+    this.onChangeRecipes.next(this.recipes.slice());
+  }
+
   ingsToShopping(ingredients: Ingredient[]) {
     this.slService.addRecipeIngredients(ingredients);
   }
