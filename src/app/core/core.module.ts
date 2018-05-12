@@ -3,6 +3,7 @@ import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "../app-routing.module";
 import { AuthInterceptor } from "../auth/auth.interceptor";
 import { AuthService } from "../auth/auth.service";
+import { LoggingInterceptor } from "../auth/logging.interceptor";
 import { RecipesService } from "../recipes/recipes.service";
 import { DataStorageService } from "../shared/data-storage.service";
 import { SharedModule } from "../shared/shared.module";
@@ -28,7 +29,8 @@ import { HomeComponent } from "./home/home.component";
     RecipesService,
     DataStorageService,
     AuthService,
-    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+    { provide: HTTP_INTERCEPTORS, useClass: LoggingInterceptor, multi: true }
   ]
 })
 export class CoreModule {}
