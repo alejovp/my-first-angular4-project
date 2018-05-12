@@ -1,5 +1,7 @@
+import { HTTP_INTERCEPTORS } from "@angular/common/http";
 import { NgModule } from "@angular/core";
 import { AppRoutingModule } from "../app-routing.module";
+import { AuthInterceptor } from "../auth/auth.interceptor";
 import { AuthService } from "../auth/auth.service";
 import { RecipesService } from "../recipes/recipes.service";
 import { DataStorageService } from "../shared/data-storage.service";
@@ -25,7 +27,8 @@ import { HomeComponent } from "./home/home.component";
     ShoppingListService,
     RecipesService,
     DataStorageService,
-    AuthService
+    AuthService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true }
   ]
 })
 export class CoreModule {}
